@@ -16,20 +16,20 @@ The tests are written in **TypeScript**, using **Axios** for HTTP requests and *
 | Scenario | Reason |
 |---------|--------|
 | Should return status code 200 if food trucks matching the applicant | Confirms that the endpoint successfully finds and returns results when a valid name is provided. |
-| Should return response body with all expected properties | Ensures that the response includes expected fields like `applicant`, `status`, and `location`. This helps maintain API contract consistency. |
+| Should return response body with all expected properties | Verifies that the response structure follows the expected schema. This helps maintain API contract consistency. |
 
 #### ⚠️ Edge Case
 
 | Scenario | Reason |
 |---------|--------|
-| Should return status code 200 empty array when no match found | Validates that the API handles non-matching input gracefully without throwing errors, returning an empty list instead. |
+| Should return status code 200 empty array when no match found | Validates handling of valid queries with no matching results. Returning 200 with an empty array is a standard RESTful behavior. |
 
 #### ❌ Negative Scenarios
 
 | Scenario | Reason |
 |---------|--------|
 | Should return status code 400 when is not using the required parameter | Validates that the API requires the `name` query param and returns an appropriate error when it's missing. |
-| Should return status code 405 when use method not allowed | Confirms that the endpoint only accepts `GET` requests and rejects others (`POST`, `PUT`, etc.) according to REST principles. |
+| Should return status code 405 when use method not allowed | Ensures the API follows REST conventions by only allowing `GET` requests for this endpoint. |
 
 ---
 
@@ -39,21 +39,21 @@ The tests are written in **TypeScript**, using **Axios** for HTTP requests and *
 
 | Scenario | Reason |
 |---------|--------|
-| Should return status code 200 if food trucks matching the applicant | Ensures that a valid `street` query returns matching food truck data. |
-| Should return response body with all expected properties | Verifies that the response structure follows the expected schema. This is important for frontend rendering or further API chaining. |
+| Should return status code 200 if food trucks matching the street | Ensures that a valid `street` query returns matching food truck data. |
+| Should return response body with all expected properties | Verifies that the response structure follows the expected schema. This helps maintain API contract consistency. |
 
 #### ⚠️ Edge Case
 
 | Scenario | Reason |
 |---------|--------|
-| Should return status code 200 empty array when no match found | Validates graceful handling of valid queries with no matching results. Returning 200 with an empty array is a standard RESTful behavior. |
+| Should return status code 200 empty array when no match found | Validates handling of valid queries with no matching results. Returning 200 with an empty array is a standard RESTful behavior. |
 
 #### ❌ Negative Scenarios
 
 | Scenario | Reason |
 |---------|--------|
 | Should return status code 400 when is not using the required parameter | Checks if the `street` query param is properly validated and required by the API. |
-| Should return status code 405 when use method not allowed | Confirms that unsupported HTTP methods (e.g. `POST`) are blocked on this `GET`-only endpoint. |
+| Should return status code 405 when use method not allowed | Ensures the API follows REST conventions by only allowing `GET` requests for this endpoint. |
 
 ---
 
@@ -70,7 +70,7 @@ The tests are written in **TypeScript**, using **Axios** for HTTP requests and *
 
 | Scenario | Reason |
 |---------|--------|
-| Should return status code 200 empty array when invalid status was filled | Checks how the API behaves when the `status` parameter is not one of the allowed values. A 200 with empty data indicates the filter is applied strictly, which is a valid design choice. |
+| Should return status code 200 empty array when invalid status was filled | Validates handling of valid queries with no matching results. Returning 200 with an empty array is a standard RESTful behavior. |
 
 #### ❌ Negative Scenarios
 
