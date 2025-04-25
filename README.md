@@ -6,16 +6,16 @@ The tests are written in **TypeScript**, using **Axios** for HTTP requests and *
 ---
 
 📁 Project Structure
-/src
-  /types                  → Type definitions for API responses
-    foodTruck.ts          
-    validationError.ts    
 
-/tests
-  /api
-    searchByName.test.ts
-    searchByStreet.test.ts
-    nearestFoodTrucks.test.ts
+── src
+│   └── types
+│       ├── foodTruck.ts
+│       └── validationError.ts
+├── tests
+│   └── api
+│       ├── nearestFoodTrucks.test.ts
+│       ├── searchByName.test.ts
+│       └── searchByStreet.test.ts
 
 ---
 
