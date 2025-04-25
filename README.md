@@ -5,20 +5,6 @@ The tests are written in **TypeScript**, using **Axios** for HTTP requests and *
 
 ---
 
-📁 Project Structure
-
-── src
-│   └── types
-│       ├── foodTruck.ts
-│       └── validationError.ts
-├── tests
-│   └── api
-│       ├── nearestFoodTrucks.test.ts
-│       ├── searchByName.test.ts
-│       └── searchByStreet.test.ts
-
----
-
 ## 📌 Tested Endpoints
 
 ### 1. `GET /searchByName`
